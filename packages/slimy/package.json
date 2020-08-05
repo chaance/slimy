@@ -1,0 +1,37 @@
+{
+	"name": "slimy",
+	"version": "0.2.15",
+	"description": "Slimy colors",
+	"license": "MIT",
+	"author": "Chance Strickland <hi@chancedigital.io>",
+	"files": [
+		"README.md",
+		"dist"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"clean": "rimraf dist",
+		"compile": "tsc --pretty --project tsconfig.build.json && rimraf dist/types.js",
+		"build": "yarn clean && yarn compile",
+		"dev": "TODO",
+		"start": "yarn dev",
+		"svg": "ts-node ./scripts/build-svg",
+		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
+		"test": "jest --coverage",
+		"test:watch": "jest --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"font-color-contrast": "^1.0.3",
+		"fs-extra": "^9.0.1",
+		"is-object": "^1.0.1",
+		"rimraf": "^3.0.2",
+		"typescript": "^3.9.7"
+	},
+	"dependencies": {
+		"@types/chroma-js": "^2.0.0",
+		"chroma-js": "^2.1.0",
+		"tslib": "^2.0.0"
+	}
+}

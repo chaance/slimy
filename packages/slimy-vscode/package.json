@@ -1,0 +1,63 @@
+{
+  "name": "slimy-vscode",
+  "displayName": "Slimy",
+  "description": "A dark, slimy theme for your editor.",
+  "license": "MIT",
+  "author": "Chance Strickland <hi@chancedigital.io>",
+  "version": "0.4.3",
+  "publisher": "chancestrickland",
+  "scripts": {
+    "build": "ts-node ./src/build.ts",
+    "package": "vsce package",
+    "pub": "vsce publish"
+  },
+  "devDependencies": {
+    "slimy": "0.2.15",
+    "typescript": "^3.9.7",
+    "vsce": "^1.77.0"
+  },
+  "dependencies": { "tslib": "^2.0.0" },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "trailingComma": "es5"
+  },
+  "engines": { "vscode": "^1.36.0" },
+  "categories": ["Themes"],
+  "icon": "icon.png",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Slimy",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slimy-dark-color-theme.json"
+      },
+      {
+        "label": "Slimy (no italics)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slimy-dark-noitalics-color-theme.json"
+      },
+      {
+        "label": "Slimy (high-contrast)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slimy-dark-contrast-color-theme.json"
+      },
+      {
+        "label": "Slimy (high-contrast, no italics)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slimy-dark-contrast-noitalics-color-theme.json"
+      },
+      {
+        "label": "Slimy (light)",
+        "uiTheme": "vs",
+        "path": "./themes/slimy-light-color-theme.json"
+      },
+      {
+        "label": "Slimy (light, no italics)",
+        "uiTheme": "vs",
+        "path": "./themes/slimy-light-noitalics-color-theme.json"
+      }
+    ]
+  }
+}

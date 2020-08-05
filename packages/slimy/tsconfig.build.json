@@ -1,0 +1,8 @@
+{
+	"extends": "./tsconfig.json",
+	"exclude": ["scripts", "dist"],
+	"compilerOptions": {
+		"baseUrl": "src",
+		"rootDir": "src"
+	}
+}
