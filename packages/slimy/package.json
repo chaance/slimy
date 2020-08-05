@@ -1,6 +1,6 @@
 {
 	"name": "slimy",
-	"version": "0.2.15",
+	"version": "0.2.16",
 	"description": "The basis for dark, slimy color themes.",
 	"license": "MIT",
 	"author": "Chance Strickland <hi@chancedigital.io>",
@@ -29,6 +29,7 @@
 	"devDependencies": {
 		"font-color-contrast": "^1.0.3",
 		"is-object": "^1.0.1",
+		"prettier": "^2.0.5",
 		"rimraf": "^3.0.2",
 		"typescript": "^3.9.7"
 	},
