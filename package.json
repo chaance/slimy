@@ -12,6 +12,8 @@
 		"package": "yarn workspaces foreach -tv run package",
 		"pub": "yarn workspaces foreach -tv run pub",
 		"format": "yarn workspaces foreach -pv run format",
+		"root:pack": "yarn workspace slimy run package",
+		"root:pub": "yarn workspace slimy run pub",
 		"vscode:pack": "yarn workspace slimy-vscode run package",
 		"vscode:pub": "yarn workspace slimy-vscode run pub"
 	},
