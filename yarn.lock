@@ -6313,19 +6313,21 @@ fsevents@^2.1.2:
   languageName: unknown
   linkType: soft
 
-"slimy-vscode@workspace:packages/slimy-vscode":
+"slimy-theme@workspace:packages/slimy-vscode":
   version: 0.0.0-use.local
-  resolution: "slimy-vscode@workspace:packages/slimy-vscode"
+  resolution: "slimy-theme@workspace:packages/slimy-vscode"
   dependencies:
     lodash: ^4.17.19
+    prettier: ^2.0.5
     rimraf: ^3.0.2
-    slimy: 0.2.15
+    slimy: 0.2.16
+    ts-node: ^8.10.2
     typescript: ^3.9.7
     vsce: ^1.77.0
   languageName: unknown
   linkType: soft
 
-"slimy@0.2.15, slimy@workspace:packages/slimy":
+"slimy@0.2.16, slimy@workspace:packages/slimy":
   version: 0.0.0-use.local
   resolution: "slimy@workspace:packages/slimy"
   dependencies:
@@ -6333,6 +6335,7 @@ fsevents@^2.1.2:
     chroma-js: ^2.1.0
     font-color-contrast: ^1.0.3
     is-object: ^1.0.1
+    prettier: ^2.0.5
     rimraf: ^3.0.2
     tslib: ^2.0.0
     typescript: ^3.9.7

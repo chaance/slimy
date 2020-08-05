@@ -2,6 +2,12 @@
 
 All notable changes to the `slimy` theme are documented in this file.
 
+## v0.4.5
+- Improvements for C#.
+
+## v0.4.4
+- OOPS 👀
+
 ## v0.4.3
 - Fix visibility problems with line numbers in high contrast variants.
 

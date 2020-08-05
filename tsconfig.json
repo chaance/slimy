@@ -17,7 +17,7 @@
 		"typeRoots": ["./node_modules/@types", "./types"],
 		"paths": {
 			"slimy": ["packages/slimy/src"],
-			"slimy-vscode": ["packages/slimy-vscode/src"],
+			"slimy-theme": ["packages/slimy-vscode/src"],
 			"*": ["node_modules/*"]
 		}
 	},
