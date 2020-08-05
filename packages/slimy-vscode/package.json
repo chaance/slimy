@@ -12,7 +12,7 @@
     "directory": "packages/slimy-vscode"
   },
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "compile": "vsce package",
     "build": "ts-node ./src/build.ts",
     "package": "yarn format && yarn build && yarn compile",
@@ -20,6 +20,8 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
   },
   "devDependencies": {
+    "lodash": "^4.17.19",
+    "rimraf": "^3.0.2",
     "slimy": "0.2.15",
     "typescript": "^3.9.7",
     "vsce": "^1.77.0"
@@ -30,8 +32,12 @@
     "quoteProps": "consistent",
     "trailingComma": "es5"
   },
-  "engines": { "vscode": "^1.36.0" },
-  "categories": ["Themes"],
+  "engines": {
+    "vscode": "^1.36.0"
+  },
+  "categories": [
+    "Themes"
+  ],
   "icon": "icon.png",
   "contributes": {
     "themes": [

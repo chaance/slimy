@@ -6289,6 +6289,8 @@ fsevents@^2.1.2:
   version: 0.0.0-use.local
   resolution: "slimy-vscode@workspace:packages/slimy-vscode"
   dependencies:
+    lodash: ^4.17.19
+    rimraf: ^3.0.2
     slimy: 0.2.15
     typescript: ^3.9.7
     vsce: ^1.77.0
@@ -7464,10 +7466,8 @@ typescript@^3.9.7:
     eslint-plugin-jest: ^23.20.0
     husky: ^4.2.5
     jest: ^26.2.2
-    lodash: ^4.17.19
     prettier: ^2.0.5
     pretty-quick: ^2.0.1
-    rimraf: ^3.0.2
     ts-node: ^8.10.2
     tslib: ^2.0.0
     typescript: ^3.9.7

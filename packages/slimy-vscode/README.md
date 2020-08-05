@@ -7,4 +7,4 @@ A dark, slimy theme for your editor. Inspired by [smlombardi](https://marketplac
 
 Available with and without indent styles applied.
 
-![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy-vscode/raw/main/assets/screen.png)
+![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy/raw/main/packages/slimy-vscode/assets/screen.png)
