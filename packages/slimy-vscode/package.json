@@ -32,12 +32,8 @@
     "quoteProps": "consistent",
     "trailingComma": "es5"
   },
-  "engines": {
-    "vscode": "^1.36.0"
-  },
-  "categories": [
-    "Themes"
-  ],
+  "engines": { "vscode": "^1.36.0" },
+  "categories": ["Themes"],
   "icon": "icon.png",
   "contributes": {
     "themes": [

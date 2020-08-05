@@ -1362,6 +1362,8 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"storage.type.function.arrow.jsx",
 					"storage.type.function.arrow.ts",
 					"storage.type.function.arrow.tsx",
+					"keyword.other.await.cs",
+					"keyword.other.using.cs",
 					"keyword.import.go",
 					"keyword.export.go",
 					"keyword.package.go",
@@ -1397,6 +1399,9 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"source.java storage.type",
 					"source.haskell storage.type",
 					"source.c storage.type",
+					"keyword.other.namespace.cs",
+					"keyword.other.class.cs",
+					"keyword.other.var.cs",
 					"keyword.type.go",
 				],
 				settings: {
@@ -1490,6 +1495,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"support.variable.object.process.jsx",
 					"support.variable.object.process.ts",
 					"support.variable.object.process.tsx",
+					"variable.other.object.cs",
 					"variable.other.object.js",
 					"variable.other.object.jsx",
 					"variable.other.object.ts",
@@ -1618,6 +1624,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 					// Language-specific overrides
 					"meta.namespace.declaration.ts",
+					"entity.name.type.namespace.cs",
 				],
 				settings: {
 					foreground: syntaxNamespace.hex(),

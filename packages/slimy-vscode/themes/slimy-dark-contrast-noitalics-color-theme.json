@@ -911,6 +911,8 @@
 				"storage.type.function.arrow.jsx",
 				"storage.type.function.arrow.ts",
 				"storage.type.function.arrow.tsx",
+				"keyword.other.await.cs",
+				"keyword.other.using.cs",
 				"keyword.import.go",
 				"keyword.export.go",
 				"keyword.package.go"
@@ -941,6 +943,9 @@
 				"source.java storage.type",
 				"source.haskell storage.type",
 				"source.c storage.type",
+				"keyword.other.namespace.cs",
+				"keyword.other.class.cs",
+				"keyword.other.var.cs",
 				"keyword.type.go"
 			],
 			"settings": {
@@ -1027,6 +1032,7 @@
 				"support.variable.object.process.jsx",
 				"support.variable.object.process.ts",
 				"support.variable.object.process.tsx",
+				"variable.other.object.cs",
 				"variable.other.object.js",
 				"variable.other.object.jsx",
 				"variable.other.object.ts",
@@ -1163,7 +1169,8 @@
 				"entity.name.type.namespace",
 				"meta.namespace",
 				"support.other.namespace",
-				"meta.namespace.declaration.ts"
+				"meta.namespace.declaration.ts",
+				"entity.name.type.namespace.cs"
 			],
 			"settings": {
 				"foreground": "#93eaff"
