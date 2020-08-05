@@ -4,7 +4,7 @@ import { color } from "../color";
 const _ = color("242b2b");
 
 // Not a chalk color but one we'll use a few times in this theme.
-const forestGreen = _('405c50')
+const forestGreen = _("405c50");
 
 const chalk: ColorScheme["chalk"] = {
 	red: _("b64e4e"),
@@ -98,7 +98,7 @@ const ui: ColorScheme["ui"] = {
 		activeFg: base.fg.brighten(0.5),
 		hoverBg: forestGreen.alpha(0.25),
 		hoverFg: base.fg.brighten(0.5),
-	}
+	},
 };
 
 export const dark: ColorScheme = {

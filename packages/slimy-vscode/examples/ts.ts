@@ -1,61 +1,63 @@
-'use strict';
-import React from 'react';
+"use strict";
+import React from "react";
 
 class FakeClass {}
 
-let popper = function() {
-  return 'popper';
-}
+let popper = function () {
+	return "popper";
+};
 
 let fake = new FakeClass();
-let str = 'Fake news';
+let str = "Fake news";
 
 type TTpo = string;
-interface IPop { pop: string; }
+interface IPop {
+	pop: string;
+}
 
-let topper = (cop: TTpo) => 'topper';
+let topper = (cop: TTpo) => "topper";
 
 function stopper() {
-  return 'stopper';
+	return "stopper";
 }
 
 class Sale extends FakeClass {
-  constructor(price) {
-    super(price);
-    [this.decoratorsList, this.price] = [[], price];
-  }
+	constructor(price) {
+		super(price);
+		[this.decoratorsList, this.price] = [[], price];
+	}
 
-  decorate(decorator) {
-    if (!Sale[decorator]) throw new Error(`decorator not exist: ${decorator}`);
-    this.decoratorsList.push(Sale[decorator]);
-    let fake = new FakeClass();
-  }
+	decorate(decorator) {
+		if (!Sale[decorator]) throw new Error(`decorator not exist: ${decorator}`);
+		this.decoratorsList.push(Sale[decorator]);
+		let fake = new FakeClass();
+	}
 
-  getPrice() {
-    for (let decorator of this.decoratorsList) {
-      this.price = decorator(this.price);
-    }
-    return this.price.toFixed(2);
-  }
+	getPrice() {
+		for (let decorator of this.decoratorsList) {
+			this.price = decorator(this.price);
+		}
+		return this.price.toFixed(2);
+	}
 
-  static quebec(price) {
-    // this is a comment
-    return price + (price * 7.5) / 100;
-  }
+	static quebec(price) {
+		// this is a comment
+		return price + (price * 7.5) / 100;
+	}
 
-  static fedtax(price) {
-    return price + (price * 5) / 100;
-  }
+	static fedtax(price) {
+		return price + (price * 5) / 100;
+	}
 }
 
 let sale = new Sale(100);
-sale.decorate('fedtax');
-sale.decorate('quebec');
+sale.decorate("fedtax");
+sale.decorate("quebec");
 console.log(sale.getPrice()); //112.88
 
 const doAThing = {
-  help: 'me',
-  doaThing: 5,
+	help: "me",
+	doaThing: 5,
 };
 
 getPrice();
@@ -63,17 +65,17 @@ getPrice();
 //deeply nested
 
 async function asyncCall({ pop: popAWeasel, toot }) {
-  var result = await resolveAfter2Seconds();
+	var result = await resolveAfter2Seconds();
 }
 
 const options = {
-  connections: {
-    compression: false,
-  },
+	connections: {
+		compression: false,
+	},
 };
 
 for (let i = 0; i < 10; i++) {
-  continue;
+	continue;
 }
 
 if (true) {
@@ -82,20 +84,20 @@ if (true) {
 while (true) {}
 
 switch (2) {
-  case 2:
-    break;
-  default:
-    break;
+	case 2:
+		break;
+	default:
+		break;
 }
 
 class EditFishForm extends Component {
-  static propTypes = {
-    updateFish: PropTypes.func,
-    deleteFish: PropTypes.func,
-    index: PropTypes.string,
-    fish: PropTypes.shape({
-      image: PropTypes.string,
-      name: PropTypes.string.isRequired,
-    }),
-  };
+	static propTypes = {
+		updateFish: PropTypes.func,
+		deleteFish: PropTypes.func,
+		index: PropTypes.string,
+		fish: PropTypes.shape({
+			image: PropTypes.string,
+			name: PropTypes.string.isRequired,
+		}),
+	};
 }

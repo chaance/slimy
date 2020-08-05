@@ -1,6 +1,6 @@
 // Adapted from https://github.com/ayu-theme/ayu-colors/blob/master/scripts/build-svg.js
 // TODO: Do something with this or delete
-import * as fs from "fs-extra";
+import * as fs from "fs";
 import fontColorContrast from "font-color-contrast";
 
 import colors from "../src/index";

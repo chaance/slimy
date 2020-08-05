@@ -1,26 +1,26 @@
 export type { SchemeName } from "slimy";
 
 export type ColorTheme = {
-  name: string;
-  type: "light" | "dark";
-  colors: Record<string, string | undefined>;
-  tokenColors: {
-    name?: string;
-    scope?: string | string[];
-    settings: {
-      background?: string;
-      foreground?: string;
-      fontStyle?:
-        | "italic"
-        | "bold"
-        | "underline"
-        | "bold italic"
-        | "bold italic underline"
-        | "bold underline"
-        | "italic underline"
-        | "";
-    };
-  }[];
-  semanticHighlighting: boolean;
-  semanticTokenColors?: Record<string, string>;
+	name: string;
+	type: "light" | "dark";
+	colors: Record<string, string | undefined>;
+	tokenColors: {
+		name?: string;
+		scope?: string | string[];
+		settings: {
+			background?: string;
+			foreground?: string;
+			fontStyle?:
+				| "italic"
+				| "bold"
+				| "underline"
+				| "bold italic"
+				| "bold italic underline"
+				| "bold underline"
+				| "italic underline"
+				| "";
+		};
+	}[];
+	semanticHighlighting: boolean;
+	semanticTokenColors?: Record<string, string>;
 };

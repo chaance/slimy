@@ -6,11 +6,17 @@
 	"scripts": {
 		"slimy": "yarn workspace slimy run",
 		"slimy-vscode": "yarn workspace slimy-vscode",
-		"build": "yarn workspaces foreach -tv run build"
+		"build": "yarn workspaces foreach -tv run build",
+		"clean": "yarn workspaces foreach -pv run clean",
+		"compile": "yarn workspaces foreach -tv run compile",
+		"package": "yarn workspaces foreach -tv run package",
+		"pub": "yarn workspaces foreach -tv run pub",
+		"format": "yarn workspaces foreach -pv run format",
+		"vscode:pack": "yarn workspace slimy-vscode run package",
+		"vscode:pub": "yarn workspace slimy-vscode run pub"
 	},
 	"devDependencies": {
 		"@chancedigital/eslint-config": "^7.3.0",
-		"@types/fs-extra": "^9.0.1",
 		"@types/is-object": "^1.0.1",
 		"@types/jest": "^26.0.8",
 		"@types/lodash": "^4.14.158",

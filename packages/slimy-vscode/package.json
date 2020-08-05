@@ -1,22 +1,29 @@
 {
   "name": "slimy-vscode",
-  "displayName": "Slimy",
-  "description": "A dark, slimy theme for your editor.",
+  "version": "0.4.3",
+  "description": "A dark, slimy color theme for VS Code.",
   "license": "MIT",
   "author": "Chance Strickland <hi@chancedigital.io>",
-  "version": "0.4.3",
+  "displayName": "Slimy",
   "publisher": "chancestrickland",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chancestrickland/slimy",
+    "directory": "packages/slimy-vscode"
+  },
   "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "vsce package",
     "build": "ts-node ./src/build.ts",
-    "package": "vsce package",
-    "pub": "vsce publish"
+    "package": "yarn format && yarn build && yarn compile",
+    "pub": "yarn package && vsce publish",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\""
   },
   "devDependencies": {
     "slimy": "0.2.15",
     "typescript": "^3.9.7",
     "vsce": "^1.77.0"
   },
-  "dependencies": { "tslib": "^2.0.0" },
   "prettier": {
     "arrowParens": "always",
     "singleQuote": false,

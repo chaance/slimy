@@ -1,9 +1,14 @@
 {
 	"name": "slimy",
 	"version": "0.2.15",
-	"description": "Slimy colors",
+	"description": "The basis for dark, slimy color themes.",
 	"license": "MIT",
 	"author": "Chance Strickland <hi@chancedigital.io>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chancestrickland/slimy",
+		"directory": "packages/slimy"
+	},
 	"files": [
 		"README.md",
 		"dist"
@@ -14,9 +19,8 @@
 		"clean": "rimraf dist",
 		"compile": "tsc --pretty --project tsconfig.build.json && rimraf dist/types.js",
 		"build": "yarn clean && yarn compile",
-		"dev": "TODO",
-		"start": "yarn dev",
-		"svg": "ts-node ./scripts/build-svg",
+		"package": "yarn format && yarn build",
+		"pub": "yarn package && yarn npm publish",
 		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
 		"test": "jest --coverage",
 		"test:watch": "jest --watch",
@@ -24,7 +28,6 @@
 	},
 	"devDependencies": {
 		"font-color-contrast": "^1.0.3",
-		"fs-extra": "^9.0.1",
 		"is-object": "^1.0.1",
 		"rimraf": "^3.0.2",
 		"typescript": "^3.9.7"
