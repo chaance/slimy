@@ -26,31 +26,42 @@ const base: ColorScheme["base"] = {
 	ui: _("919d9f"),
 };
 
-const syntax: ColorScheme["syntax"] = {
-	tag: chalk.yellow,
-	func: _("ffbe88"),
-	entity: chalk.yellow.darken(0.1),
-	string: chalk.blue,
-	regexp: chalk.green.mix(chalk.blue, 0.5).brighten(0.4),
-	markup: _("cda479"),
-	keyword: chalk.blue.brighten(0.3),
-	special: chalk.green,
-	comment: _("7c8280"),
-	constant: chalk.purple,
-	operator: _("ccd2be"),
-	error: chalk.red,
-	variable: chalk.magenta,
-	type: chalk.cyan,
+export function main() {}
 
-	boolean: chalk.red.darken(0.2).desaturate(0.6),
+const syntax: ColorScheme["syntax"] = {
+	// Keywords
+	entity: chalk.yellow.darken(0.1),
+	keyword: chalk.orange.brighten(0.3),
+	storage: chalk.orange.brighten(0.3).desaturate(0.5).fade(0.1),
+
+	// Entity names
 	class: chalk.yellow.darken(0.1).desaturate(0.7),
+	constant: chalk.purple,
+	func: chalk.orange.mix(chalk.yellow, 0.7).brighten(0.4).desaturate(0.4),
+	tag: chalk.yellow,
+	type: chalk.cyan,
+	variable: chalk.magenta,
+
+	// Data
+	boolean: chalk.red.darken(0.2).desaturate(0.6),
+	number: chalk.purple.brighten(0.1),
+	regexp: chalk.green.mix(chalk.blue, 0.5).brighten(0.4),
+	string: chalk.blue,
+
+	// CSS
+	cssAtRule: chalk.red.brighten(1).desaturate(0.6),
 	cssClass: chalk.green.brighten(0.4).desaturate(0.5),
 	cssId: chalk.magenta.darken(0.2),
-	cssProperties: chalk.green.mix(chalk.blue, 0.5).brighten(0.4),
-	cssTag: chalk.yellow.darken(0.1),
-	storage: chalk.blue.brighten(0.3).fade(0.2),
+	cssProperty: chalk.green.mix(chalk.blue, 0.5).brighten(0.4),
+	cssUnit: chalk.blue.brighten(0.3),
+
+	// Other
+	comment: base.fg.fade(0.75),
+	error: chalk.red,
+	markup: chalk.orange.darken(0.3).desaturate(0.5),
+	operator: _("ccd2be"),
 	punctuation: base.fg.fade(0.4),
-	number: chalk.purple.brighten(0.1),
+	special: chalk.green,
 };
 
 const vcs: ColorScheme["vcs"] = {

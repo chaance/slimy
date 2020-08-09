@@ -24,10 +24,11 @@ export type ColorScheme = {
 		class: Color;
 		comment: Color;
 		constant: Color;
+		cssAtRule: Color;
 		cssClass: Color;
 		cssId: Color;
-		cssProperties: Color;
-		cssTag: Color;
+		cssProperty: Color;
+		cssUnit: Color;
 		entity: Color;
 		error: Color;
 		func: Color;

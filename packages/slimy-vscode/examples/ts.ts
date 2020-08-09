@@ -1,6 +1,8 @@
 "use strict";
 import React from "react";
 
+namespace FakeNamespace {}
+
 class FakeClass {}
 
 let popper = function () {

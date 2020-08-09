@@ -76,6 +76,8 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 		[brightenIfDark(type)](0.6);
 	const syntaxReference = scheme.syntax.markup[brightenIfDark(type)](0.3);
 
+	const tagAttributeName = scheme.base.fg[brightenIfDark(type)](0.15);
+
 	return {
 		name,
 		type,
@@ -91,7 +93,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// Base colors
 			// @link https://code.visualstudio.com/api/references/theme-color#base-colors
-			"focusBorder": scheme.base.ui.fade(0.4).hex(),
+			"focusBorder": scheme.base.ui.fade(0.3).hex(),
 			"foreground": scheme.base.ui.hex(),
 			"widget.shadow": scheme.ui.panel.shadow?.hex() || transparent,
 			"selection.background": selectionBackground.alpha(0.4).hex(),
@@ -930,7 +932,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"keyword.other.unit.scss",
 				],
 				settings: {
-					foreground: scheme.syntax.keyword.hex(),
+					foreground: scheme.syntax.cssUnit.hex(),
 				},
 			},
 			{
@@ -968,42 +970,42 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Regular Expressions",
+				name: "Regular expressions",
 				scope: ["string.regexp", "string.regexp keyword.other"],
 				settings: {
 					foreground: scheme.syntax.regexp.hex(),
 				},
 			},
 			{
-				name: "Regular Expression Quantifier",
+				name: "Regular expression quantifier",
 				scope: "keyword.operator.quantifier.regexp",
 				settings: {
 					foreground: scheme.syntax.entity.brighten(0.2).hex(),
 				},
 			},
 			{
-				name: "Regular Expression Brackets",
+				name: "Regular expression brackets",
 				scope: "punctuation.definition.character-class.regexp",
 				settings: {
 					foreground: scheme.syntax.markup.brighten(0.15).hex(),
 				},
 			},
 			{
-				name: "Regular Expression Group",
+				name: "Regular expression group",
 				scope: "punctuation.definition.group.regexp",
 				settings: {
 					foreground: scheme.syntax.error.brighten(0.2).hex(),
 				},
 			},
 			{
-				name: "Regular Expression Group Nocapture",
+				name: "Regular expression group nocapture",
 				scope: "punctuation.definition.group.no-capture.regexp",
 				settings: {
 					foreground: scheme.syntax.constant.brighten(0.15).hex(),
 				},
 			},
 			{
-				name: "Regular Expression Anchor",
+				name: "Regular expression anchor",
 				scope: "keyword.control.anchor.regexp",
 				settings: {
 					foreground: scheme.syntax.special.brighten(0.15).hex(),
@@ -1027,7 +1029,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Constant Character Escape",
+				name: "Constant character escape",
 				scope: ["constant.character", "constant.character.escape"],
 				settings: {
 					foreground: scheme.syntax.regexp.brighten(0.2).hex(),
@@ -1153,7 +1155,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Logical Operator",
+				name: "Logical operator",
 				scope: [
 					"keyword.operator",
 					"keyword.operator.comparison",
@@ -1212,19 +1214,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Function keyword",
-				scope: [
-					"storage.type.function",
-
-					// Language-specific overrides
-					"keyword.function.go",
-				],
-				settings: {
-					foreground: scheme.chalk.orange.hex(),
-					fontStyle: italics ? "italic" : undefined,
-				},
-			},
-			{
 				name: "Function names",
 				scope: [
 					"meta.function",
@@ -1257,6 +1246,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"variable.function",
 					"variable.annotation",
 					"entity.name.function.tagged-template",
+					"entity.name.function.call",
 					"meta.function-call.generic",
 					"meta.function-call entity.name.function",
 					"meta.method-call entity.name.function",
@@ -1278,6 +1268,8 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"support.function.go",
 					"source.go meta.function-call.go",
 					"variable.language.super",
+					"support.function.core.rust",
+					"support.function.std.rust",
 				],
 				settings: {
 					foreground: scheme.syntax.func.brighten(0.2).hex(),
@@ -1296,7 +1288,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Meta Tag",
+				name: "Meta tag",
 				scope: [
 					"meta.tag",
 					"punctuation.definition.tag",
@@ -1377,9 +1369,19 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				name: "Storage",
 				scope: [
 					"storage",
+					"storage.type",
 					"meta.var.expr",
 
 					// Language-specific overrides
+					"source.java storage.type",
+					"source.haskell storage.type",
+					"source.c storage.type",
+					"keyword.other.namespace.cs",
+					"keyword.other.class.cs",
+					"keyword.other.var.cs",
+					"keyword.type.go",
+					"keyword.other.rust",
+					"keyword.other.fn.rust",
 					"meta.class meta.method.declaration meta.var.expr storage.type.js",
 					"storage.type.property.js",
 					"storage.type.property.jsx",
@@ -1391,31 +1393,10 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Storage type",
-				scope: [
-					"storage.type",
-
-					// Language-specific overrides
-					"source.java storage.type",
-					"source.haskell storage.type",
-					"source.c storage.type",
-					"keyword.other.namespace.cs",
-					"keyword.other.class.cs",
-					"keyword.other.var.cs",
-					"keyword.type.go",
-				],
-				settings: {
-					foreground: scheme.chalk.orange[brightenIfDark(type)](0.3)
-						.desaturate(0.5)
-						.fade(0.1)
-						.hex(),
-				},
-			},
-			{
 				name: "Storage modifier",
 				scope: ["storage.modifier"],
 				settings: {
-					foreground: scheme.syntax.markup.fade(0.2).hex(),
+					foreground: scheme.syntax.storage.fade(0.2).hex(),
 				},
 			},
 			{
@@ -1427,7 +1408,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"source.java storage.type.primitive",
 				],
 				settings: {
-					foreground: scheme.syntax.tag.hex(),
+					foreground: scheme.syntax.storage.blend(scheme.syntax.tag).hex(),
 				},
 			},
 			{
@@ -1479,7 +1460,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Invalid Deprecated",
+				name: "Invalid deprecated",
 				scope: "invalid.deprecated",
 				settings: {
 					foreground: scheme.base.fg.alpha(0.8).hex(),
@@ -1508,7 +1489,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "DOM Object",
+				name: "DOM object",
 				scope: ["support.type.object.dom"],
 				settings: {
 					foreground: scheme.syntax.entity.hex(),
@@ -1536,7 +1517,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "This",
+				name: "This variable keyword",
 				scope: [
 					"variable.language.this",
 
@@ -1581,7 +1562,13 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 			},
 			{
 				name: "Type params",
-				scope: ["meta.type.parameters entity.name.type"],
+				scope: [
+					"meta.type.parameters entity.name.type",
+
+					// Language-specific overrides
+					"meta.type_params.rust",
+					"meta.type_params.rust storage.type.core.rust",
+				],
 				settings: {
 					foreground: syntaxTypeParam.hex(),
 				},
@@ -1624,6 +1611,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 					// Language-specific overrides
 					"meta.namespace.declaration.ts",
+					"meta.namespace.declaration.ts entity.name.type",
 					"entity.name.type.namespace.cs",
 				],
 				settings: {
@@ -1676,7 +1664,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Other Variables in Code Documentations",
+				name: "Other variables in code documentations",
 				scope: [
 					"comment.block.documentation punctuation.definition",
 					"comment.block.documentation storage.type",
@@ -1735,7 +1723,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// Markdown
 			{
-				name: "Markdown Headings",
+				name: "Markdown headings",
 				scope: "entity.name.section.markdown",
 				settings: {
 					fontStyle: "bold",
@@ -1743,7 +1731,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Markdown Headings punctuation",
+				name: "Markdown headings punctuation",
 				scope: "punctuation.definition.heading.markdown",
 				settings: {
 					fontStyle: "",
@@ -1900,25 +1888,23 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// CSS
 			{
-				name: "CSS",
-				scope: "source.css",
-				settings: {
-					foreground: scheme.base.fg[brightenIfDark(type)](0.15).hex(),
-				},
-			},
-			{
 				name: "CSS class selector",
 				scope: [
 					"entity.other.attribute-name.class.css",
 					"entity.other.attribute-name.parent-selector-suffix.scss",
 					"meta.selector",
+
+					// Nested selector strings in SASS, e.g. &__child
+					// Doesn't work for BEM style modifiers (&--mod) because the AST
+					// thinks they are CSS custom properties :(
+					"entity.other.attribute-name.parent-selector-suffix punctuation.definition.entity.css",
 				],
 				settings: {
 					foreground: scheme.syntax.cssClass.hex(),
 				},
 			},
 			{
-				name: "CSS Class Selector punctuation",
+				name: "CSS class selector punctuation",
 				scope: [
 					"entity.punctuation.other.attribute-name.class.css.definition",
 					"entity.scss.meta.property-list.punctuation.other.attribute-name.class.css.definition",
@@ -1930,17 +1916,13 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "CSS Tag Selector",
-				scope: ["entity.name.tag.css", "entity.name.tag.scss"],
-				settings: {
-					foreground: scheme.syntax.cssTag.hex(),
-				},
-			},
-			{
 				name: "CSS parent operator",
-				scope: ["source.css keyword.operator.parent"],
+				scope: [
+					"source.css keyword.operator.parent",
+					"entity.name.tag.reference.scss",
+				],
 				settings: {
-					foreground: scheme.syntax.special.brighten(0.1).hex(),
+					foreground: syntaxReference.hex(),
 				},
 			},
 			{
@@ -1966,11 +1948,11 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"support.type.property-name.scss",
 				],
 				settings: {
-					foreground: scheme.syntax.cssProperties.hex(),
+					foreground: scheme.syntax.cssProperty.hex(),
 				},
 			},
 			{
-				name: "CSS Vendored Property Name",
+				name: "CSS vendored property name",
 				scope: "support.type.vendored.property-name.css",
 				settings: {
 					foreground: scheme.syntax.regexp[brightenIfDark(type)](0.2).hex(),
@@ -1997,7 +1979,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "CSS Vendor Prefixed Property Value",
+				name: "CSS vendor prefixed property value",
 				scope: "support.constant.vendored.property-value.css",
 				settings: {
 					foreground: scheme.syntax.entity.hex(),
@@ -2018,7 +2000,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "CSS Font Names",
+				name: "CSS font names",
 				scope:
 					"support.constant.font-name.scss, support.constant.font-name.css",
 				settings: {
@@ -2037,7 +2019,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "CSS Placeholder",
+				name: "CSS placeholder",
 				scope: [
 					"entity.other.attribute-name.placeholder.css",
 					"entity.other.attribute-name.placeholder.sass",
@@ -2052,8 +2034,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				scope: [
 					"keyword.control.at-rule",
 					"keyword.control.at-rule punctuation.definition",
-					"meta.at-rule.return",
-					"meta.at-rule.if",
 					"source.css keyword.control.return",
 					"source.css keyword.control.content",
 					"source.css keyword.control.each",
@@ -2072,16 +2052,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"source.css keyword.control.debug punctuation.definition",
 				],
 				settings: {
-					foreground: scheme.syntax.error[brightenIfDark(type)](1)
-						.desaturate(0.6)
-						.hex(),
-				},
-			},
-			{
-				name: "CSS @rule",
-				scope: ["meta.at-rule.return variable.parameter.url.scss"],
-				settings: {
-					foreground: scheme.base.fg[brightenIfDark(type)](0.5).hex(),
+					foreground: scheme.syntax.cssAtRule.hex(),
 				},
 			},
 			{
@@ -2113,13 +2084,21 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				scope: [
 					"entity.other.attribute-name.attribute",
 					"entity.other.attribute-name.css",
+					"entity.other.attribute-name.scss",
 				],
 				settings: {
-					foreground: scheme.syntax.error.desaturate(1).hex(),
+					foreground: tagAttributeName.hex(),
 				},
 			},
 			{
-				name: "CSS at-media attribute",
+				name: "CSS attribute selector",
+				scope: ["meta.attribute-selector"],
+				settings: {
+					foreground: scheme.syntax.string.hex(),
+				},
+			},
+			{
+				name: "CSS @media attribute",
 				scope: [
 					"support.type.property-name.media",
 					"meta.at-rule.include.scss",
@@ -2133,7 +2112,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// SASS
 			{
-				name: "SASS at-import string",
+				name: "SASS @import string",
 				scope: "scss.meta.at-rule.import.string.quoted.single",
 				settings: {
 					foreground: scheme.syntax.special[darkenIfDark(type)](0.15).hex(),
@@ -2148,11 +2127,11 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"source.css support.function.misc",
 				],
 				settings: {
-					foreground: scheme.syntax.markup.hex(),
+					foreground: scheme.syntax.func.hex(),
 				},
 			},
 			{
-				name: "SASS Interpolation",
+				name: "SASS interpolation",
 				scope: [
 					"variable.interpolation.sass",
 					"variable.interpolation.scss",
@@ -2168,13 +2147,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "SASS tag reference ampersand",
-				scope: "entity.name.tag.reference.scss",
-				settings: {
-					foreground: syntaxReference.hex(),
-				},
-			},
-			{
 				name: "SASS map key",
 				scope: "meta.definition.variable.map.scss support.type.map.key.scss",
 				settings: {
@@ -2182,7 +2154,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "SASS Placeholder %",
+				name: "SASS placeholder %",
 				scope: [
 					"entity.other.attribute-name.placeholder.css punctuation.definition.entity.css",
 					"entity.other.attribute-name.placeholder.scss punctuation.definition.entity.sass",
@@ -2195,7 +2167,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// HTML
 			{
-				name: "HTML Tag Names",
+				name: "HTML tag names",
 				scope: [
 					"entity.name.tag",
 					"meta.tag.other.html",
@@ -2218,7 +2190,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "HTML Tag Attribute Name",
+				name: "HTML tag attribute name",
 				scope: [
 					"entity.other.attribute-name",
 					"entity.other.attribute-name.html",
@@ -2238,11 +2210,11 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"entity.other.attribute-name.tsx",
 				],
 				settings: {
-					foreground: scheme.base.fg[brightenIfDark(type)](0.15).hex(),
+					foreground: tagAttributeName.hex(),
 				},
 			},
 			{
-				name: "HTML Tag Attribute Values",
+				name: "HTML tag attribute values",
 				scope: [
 					"string.quoted.double.html",
 					"meta.template string.quoted.double",
@@ -2259,13 +2231,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				scope: "support.variable.object.process.js",
 				settings: {
 					foreground: scheme.syntax.regexp[brightenIfDark(type)](0.3).hex(),
-				},
-			},
-			{
-				name: "JavaScript Method Declaration e.g. `constructor`",
-				scope: "meta.method.declaration storage.type.js",
-				settings: {
-					foreground: scheme.syntax.func.hex(),
 				},
 			},
 			{
@@ -2300,7 +2265,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				name: "TypeScript support type primitive",
 				scope: ["support.type.primitive.ts", "support.type.primitive.tsx"],
 				settings: {
-					foreground: scheme.syntax.entity.fade(0.5).hex(),
+					foreground: scheme.syntax.entity.fade(0.3).hex(),
 				},
 			},
 			{
@@ -2315,16 +2280,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				],
 				settings: {
 					foreground: scheme.syntax.variable.brighten(0.15).hex(),
-				},
-			},
-			{
-				name: "TypeScript method declaration e.g. `constructor`",
-				scope: [
-					"meta.method.declaration storage.type.ts",
-					"meta.method.declaration storage.type.tsx",
-				],
-				settings: {
-					foreground: scheme.syntax.func.hex(),
 				},
 			},
 
@@ -2381,14 +2336,14 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "PHP Control Keywords",
+				name: "PHP control keywords",
 				scope: "keyword.control.php",
 				settings: {
 					foreground: scheme.syntax.tag.fade(0.1).hex(),
 				},
 			},
 			{
-				name: "PHP Echo",
+				name: "PHP echo",
 				scope: "support.function.construct.output.php",
 				settings: {
 					foreground: scheme.syntax.tag.fade(0.1).hex(),
@@ -2427,7 +2382,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 			// Normalize font styles
 			{
-				name: "normalize font style of certain components",
+				name: "Normalize font style of certain components",
 				scope: [
 					"meta.property-list.css meta.property-value.css variable.other.less",
 					"meta.property-list.scss variable.scss",
