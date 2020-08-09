@@ -338,7 +338,7 @@
 		"symbolIcon.operatorForeground": "#55564f",
 		"symbolIcon.packageForeground": "#454238",
 		"symbolIcon.propertyForeground": "#91a9b3",
-		"symbolIcon.referenceForeground": "#5f462f",
+		"symbolIcon.referenceForeground": "#985e38",
 		"symbolIcon.snippetForeground": "#655b33",
 		"symbolIcon.stringForeground": "#427c8e",
 		"symbolIcon.structForeground": "#749948",
@@ -531,7 +531,7 @@
 			"name": "Regular expression brackets",
 			"scope": "punctuation.definition.character-class.regexp",
 			"settings": {
-				"foreground": "#745941"
+				"foreground": "#af724b"
 			}
 		},
 		{
@@ -790,7 +790,7 @@
 				"support.macro"
 			],
 			"settings": {
-				"foreground": "#6d533b"
+				"foreground": "#a76b44"
 			}
 		},
 		{
@@ -834,7 +834,7 @@
 				"entity.name.tag.doctype"
 			],
 			"settings": {
-				"foreground": "#664d35"
+				"foreground": "#a0653e"
 			}
 		},
 		{
@@ -1450,7 +1450,7 @@
 				"entity.name.tag.reference.scss"
 			],
 			"settings": {
-				"foreground": "#5f462f"
+				"foreground": "#985e38"
 			}
 		},
 		{
@@ -1553,7 +1553,7 @@
 				"entity.other.attribute-name.placeholder.scss"
 			],
 			"settings": {
-				"foreground": "#6d533b"
+				"foreground": "#a76b44"
 			}
 		},
 		{
@@ -1691,7 +1691,7 @@
 				"entity.other.attribute-name.placeholder.scss punctuation.definition.entity.scss"
 			],
 			"settings": {
-				"foreground": "#745941"
+				"foreground": "#af724b"
 			}
 		},
 		{
