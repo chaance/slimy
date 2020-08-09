@@ -7,6 +7,8 @@
 		"slimy": "yarn workspace slimy run",
 		"slimy-vscode": "yarn workspace slimy-vscode",
 		"build": "yarn workspaces foreach -tv run build",
+		"build:svg": "ts-node scripts/build-svg",
+		"build:all": "yarn build && yarn build:svg",
 		"clean": "yarn workspaces foreach -pv run clean",
 		"compile": "yarn workspaces foreach -tv run compile",
 		"package": "yarn workspaces foreach -tv run package",
