@@ -366,6 +366,7 @@
 	"semanticHighlighting": false,
 	"tokenColors": [
 		{
+			"name": "Base",
 			"settings": {
 				"foreground": "#e0e0e0"
 			}
@@ -680,34 +681,6 @@
 			}
 		},
 		{
-			"name": "Curly braces",
-			"scope": [
-				"meta.brace.curly"
-			],
-			"settings": {
-				"foreground": "#e0e0e0e6"
-			}
-		},
-		{
-			"name": "Round braces",
-			"scope": [
-				"meta.brace.round"
-			],
-			"settings": {
-				"foreground": "#e0e0e0cc"
-			}
-		},
-		{
-			"name": "Square braces",
-			"scope": [
-				"meta.brace.square",
-				"brace.array.literal.square"
-			],
-			"settings": {
-				"foreground": "#e8e8e8e6"
-			}
-		},
-		{
 			"name": "Logical operator",
 			"scope": [
 				"keyword.operator",
@@ -849,7 +822,7 @@
 				"punctuation.definition.tag.end.html source.js"
 			],
 			"settings": {
-				"foreground": "#c4c8c9"
+				"foreground": "#b8b8b8"
 			}
 		},
 		{

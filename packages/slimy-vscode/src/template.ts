@@ -835,6 +835,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 
 		tokenColors: [
 			{
+				name: "Base",
 				settings: {
 					// background: scheme.base.bg.hex(),
 					foreground: scheme.base.fg.hex(),
@@ -1134,27 +1135,6 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				},
 			},
 			{
-				name: "Curly braces",
-				scope: ["meta.brace.curly"],
-				settings: {
-					foreground: scheme.base.fg.alpha(0.9).hex(),
-				},
-			},
-			{
-				name: "Round braces",
-				scope: ["meta.brace.round"],
-				settings: {
-					foreground: scheme.base.fg.alpha(0.8).hex(),
-				},
-			},
-			{
-				name: "Square braces",
-				scope: ["meta.brace.square", "brace.array.literal.square"],
-				settings: {
-					foreground: scheme.base.fg.brighten(0.15).alpha(0.9).hex(),
-				},
-			},
-			{
 				name: "Logical operator",
 				scope: [
 					"keyword.operator",
@@ -1300,7 +1280,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 					"punctuation.definition.tag.end.html source.js",
 				],
 				settings: {
-					foreground: scheme.base.ui.brighten(0.2).hex(),
+					foreground: scheme.syntax.punctuation.brighten(0.2).hex(),
 				},
 			},
 			{
