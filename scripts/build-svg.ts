@@ -2,6 +2,7 @@
 
 import fs from "fs";
 import * as path from "path";
+import sharp from "sharp";
 
 const darkTheme = JSON.parse(
 	removeComments(
@@ -16,14 +17,19 @@ const darkTheme = JSON.parse(
 	).trim()
 ) as ColorTheme;
 
-fs.writeFileSync(
-	path.join(__dirname, "../assets/screen.svg"),
-	getScreenSvg(darkTheme),
-	{
-		encoding: "utf-8",
-	}
-);
-console.log("Success! 💯");
+const svgPath = path.join(__dirname, "../assets/screen.svg");
+fs.writeFile(svgPath, getScreenSvg(darkTheme), { encoding: "utf-8" }, (err) => {
+	if (err) throw err;
+	let svgFile = fs.readFileSync(svgPath);
+	sharp(svgFile, { density: 450 })
+		.resize(1461, 973)
+		.png()
+		.toFile(path.join(__dirname, "../assets/screen.png"))
+		.then(() => {
+			console.log("Success! 💯");
+		});
+});
+//let fs.readFileSync(svgPath, { encoding: "utf-8" });
 
 //
 

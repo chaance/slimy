@@ -10,4 +10,4 @@
 
 <hr />
 
-![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy/raw/main/assets/screen.svg)
+![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy/raw/main/assets/screen.png)
