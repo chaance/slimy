@@ -2,6 +2,9 @@
 
 All notable changes to the `slimy` theme are documented in this file.
 
+## v0.4.7
+- Simplify punctuation colors for better consistency
+
 ## v0.4.6
 - More consistency between CSS selectors and HTML equivalents
 - Improvements for Rust and C++
