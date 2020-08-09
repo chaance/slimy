@@ -10,6 +10,6 @@
 
 <hr />
 
-![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy/raw/main/assets/screen.png)
+![Mockup of the theme with a TypeScript React editor](https://github.com/chancestrickland/slimy/raw/main/assets/screen.svg)
 
 More to come for the readme here! In the mean time, check out the `packages` directory to see active themes.
