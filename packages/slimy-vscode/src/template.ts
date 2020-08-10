@@ -1090,6 +1090,7 @@ export function template(variant: SchemeName, italics: boolean): ColorTheme {
 				scope: [
 					"block.brace.array.literal.square",
 					"block.punctuation",
+					"meta.brace",
 					"meta.delimiter",
 					"meta.delimiter.comma",
 					"meta.function meta.delimiter.comma",

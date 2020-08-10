@@ -2,6 +2,9 @@
 
 All notable changes to the `slimy` theme are documented in this file.
 
+## v0.4.8
+- Fix broken styling for some brace punctuation
+
 ## v0.4.7
 - Simplify punctuation colors for better consistency
 
