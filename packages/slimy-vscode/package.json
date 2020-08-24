@@ -1,6 +1,6 @@
 {
   "name": "slimy-theme",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "A dark, slimy color theme for VS Code.",
   "license": "MIT",
   "author": "Chance Strickland <hi@chancedigital.io>",
@@ -23,16 +23,10 @@
     "lodash": "^4.17.19",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "slimy": "0.2.17",
+    "slimy": "0.2.18",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
     "vsce": "^1.77.0"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "singleQuote": false,
-    "quoteProps": "consistent",
-    "trailingComma": "es5"
   },
   "engines": { "vscode": "^1.36.0" },
   "categories": ["Themes"],
