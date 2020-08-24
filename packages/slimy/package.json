@@ -29,13 +29,13 @@
 	"devDependencies": {
 		"font-color-contrast": "^1.0.3",
 		"is-object": "^1.0.1",
-		"prettier": "^2.0.5",
+		"prettier": "^2.1.0",
 		"rimraf": "^3.0.2",
-		"typescript": "^3.9.7"
+		"typescript": "^4.0.2"
 	},
 	"dependencies": {
 		"@types/chroma-js": "^2.0.0",
 		"chroma-js": "^2.1.0",
-		"tslib": "^2.0.0"
+		"tslib": "^2.0.1"
 	}
 }
